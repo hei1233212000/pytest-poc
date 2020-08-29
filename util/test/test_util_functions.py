@@ -1,5 +1,25 @@
 import pytest
+
+from my_logger import get_logger
 from util.util_functions import summation, sum_list
+
+logger = get_logger(__name__)
+
+
+def setup_module(module):
+    logger.info('set up module: {}'.format(module))
+
+
+def teardown_module(module):
+    logger.info('tear down module: {}'.format(module))
+
+
+def setup_function(function):
+    logger.info('setup function: {}'.format(function))
+
+
+def teardown_function(function):
+    logger.info('tear down function: {}'.format(function))
 
 
 def test_summation():
